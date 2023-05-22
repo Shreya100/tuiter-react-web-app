@@ -1,0 +1,78 @@
+.wd-a {
+    display: flex;
+  }
+
+.wd-a-title {
+margin-left: 10px;
+padding-left: 3%;
+}
+
+.wd-a-handle{
+    color: lightgray;
+    font-size: 13px;
+    margin-top: 16px;
+    margin-left: 16px;
+    border-bottom: 1px solid lightgray;
+}
+.wd-rest{
+    clear: both;
+}
+.wd-user-image{
+
+    margin-top: 12px;
+    margin-left: 16px;
+    border-radius: 48%;
+    float: left;
+    width:3%    
+}
+.wd-c{
+    float: left;
+    margin-top: 12px;
+    margin-left: 12px;
+    width:90%;
+}
+.wd-c-author{
+    font-size: 15px;
+}
+.wd-c-handle{
+    color: lightgray;
+    font-size: 15px;
+}
+.wd-d-content{
+    font-size: 15px;
+    width: 506px;
+}
+.wd-e-image{
+    width: 504px;
+    height: 264px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px ;
+    border-bottom: 1px solid lightgray
+}
+.wd-e{
+    width: 504px;
+    border:1px solid lightgray;
+   border-radius: 10px;
+}
+
+.wd-f-title{
+    padding-left: 12px;
+    padding-right:12px;
+    font-size: 15px;
+   
+}
+.wd-f-content{
+    
+    padding-left: 12px;
+    padding-right:12px; 
+    padding-bottom: 12px;
+    font-size: 15px;
+    color: darkgray;
+
+}
+
+.wd-g-icon{
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
