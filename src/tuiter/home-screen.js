@@ -1,5 +1,6 @@
+import Home from "./home/index"
 function HomeScreen() {
-    return <h1>Home</h1>;
+    return <Home/>
    }
    export default HomeScreen;
    

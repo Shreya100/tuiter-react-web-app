@@ -1,4 +1,5 @@
 import Labs from "./labs";
+import Assignment3 from "./labs/a3";
 import HelloWorld from "./labs/a3/hello-world";
 import Tuiter from "./tuiter";
 import {BrowserRouter} from "react-router-dom";
@@ -10,7 +11,7 @@ function App() {
 
          <div className="container">
          <Routes>
-            <Route path="/"         element={<Labs/>}/>
+            <Route path="/"         element={<Assignment3/>}/>
             <Route path="/labs/*"   element={<Labs/>}/>
             <Route path="/hello"    element={<HelloWorld/>}/>
             <Route path="/tuiter/*" element={<Tuiter/>}/>
