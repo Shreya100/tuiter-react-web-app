@@ -1,7 +1,10 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import { deleteTuit } from "../reducers/tuits-reducer";
+import { deleteTuit,likeTuit,unlikeTuit } from "../reducers/tuits-reducer";
 import {RxCross2} from "react-icons/rx"
+import { useState } from "react";
+import {FaHeart} from "react-icons/fa"
+
 const TuitItem = (
  {
    tuit 
@@ -11,6 +14,17 @@ const TuitItem = (
     const deleteTuitHandler = (id) => {
     dispatch(deleteTuit(id));
     }
+
+    const [liked, setLiked] = useState(false);
+    const likeTuitHandler = () => {
+        if (liked) {
+          dispatch(unlikeTuit(tuit._id));
+          setLiked(false);
+        } else {
+          dispatch(likeTuit(tuit._id));
+          setLiked(true);
+        }
+      };
 
     return(
         <div className="list-group-item">
@@ -41,7 +55,13 @@ const TuitItem = (
                 <i className='fa fa-share-alt text-secondary'>&nbsp;{tuit.retuits}</i>
             </div>
             <div className="col-2">
-                <i className='fa fa-heart text-secondary' style={{color: "red"}} >&nbsp;{tuit.likes}</i>
+            <FaHeart
+                className={` ${liked ? "text-red" : "text-secondary"}`}
+                style={{ color: liked ? "red" : "" }}
+                onClick={likeTuitHandler}
+            />
+                &nbsp;{tuit.likes}
+
             </div>
             <div className="col-2">
                 <i className='fa fa-download text-secondary'></i>
