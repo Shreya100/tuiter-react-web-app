@@ -13,6 +13,8 @@ function Labs() {
         element={<Assignment3/>}/>
        <Route path="a4"
         element={<Assignment4/>}/>
+        <Route path=""
+        element={<Assignment3/>}/>
      </Routes>
    </div>
  );
