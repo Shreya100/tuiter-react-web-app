@@ -17,7 +17,7 @@ const WhatsHappening = () => {
  const dispatch = useDispatch();
  const tuitClickHandler = () => {
     const newTuit = {
-      _id: "123",
+      _id: "1232",
       topic: "Space",
       username: "SpaceX",
       handle: "@spacex",
@@ -25,10 +25,10 @@ const WhatsHappening = () => {
       image: "spacex.png",
       title: "SpaceX's Mission",
       liked: true,
-      likes: 2345,
-      dislikes: 42,
-      replies: 123,
-      retuits: 432,
+      likes: 0,
+      dislikes: 0,
+      replies: 0,
+      retuits: 0,
       tuit: whatsHappening
       }
       dispatch(createTuitThunk(newTuit));
