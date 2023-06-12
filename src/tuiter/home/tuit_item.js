@@ -20,7 +20,7 @@ const TuitItem = (
         <div className="list-group-item">
             <div className="row">
                 <div className="col-1 me-2">
-                    {/* <img src={require(`./images/${tuit.image}`)} className="rounded-circle"  height="48px" width="48px" alt= "nt"/> */}
+                    <img src={require(`./images/${tuit.image}`)} className="rounded-circle"  height="48px" width="48px" alt= "nt"/>
                 </div>
                 <div className="col-10 p-0">
                 <div className="d-flex justify-content-between align-items-center">
