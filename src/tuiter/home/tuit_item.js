@@ -1,9 +1,9 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import { deleteTuit,likeTuit,unlikeTuit } from "../reducers/tuits-reducer";
+import {deleteTuitThunk,updateTuitThunk} from "../services/tuits-thunks";
 import {RxCross2} from "react-icons/rx"
 import { useState } from "react";
-import {FaHeart} from "react-icons/fa"
+import {FaHeart,FaThumbsDown} from "react-icons/fa"
 
 const TuitItem = (
  {
@@ -12,25 +12,15 @@ const TuitItem = (
 ) => {
     const dispatch = useDispatch();
     const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id));
+    dispatch(deleteTuitThunk(id));
     }
 
-    const [liked, setLiked] = useState(false);
-    const likeTuitHandler = () => {
-        if (liked) {
-          dispatch(unlikeTuit(tuit._id));
-          setLiked(false);
-        } else {
-          dispatch(likeTuit(tuit._id));
-          setLiked(true);
-        }
-      };
 
     return(
         <div className="list-group-item">
             <div className="row">
                 <div className="col-1 me-2">
-                    <img src={require(`./images/${tuit.image}`)} className="rounded-circle"  height="48px" width="48px" alt= "nt"/>
+                    {/* <img src={require(`./images/${tuit.image}`)} className="rounded-circle"  height="48px" width="48px" alt= "nt"/> */}
                 </div>
                 <div className="col-10 p-0">
                 <div className="d-flex justify-content-between align-items-center">
@@ -56,13 +46,23 @@ const TuitItem = (
             </div>
             <div className="col-2">
             <FaHeart
-                className={` ${liked ? "text-red" : "text-secondary"}`}
-                style={{ color: liked ? "red" : "" }}
-                onClick={likeTuitHandler}
-            />
-                &nbsp;{tuit.likes}
-
+                // className="text-danger"
+                onClick={() =>
+                    dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1}))
+                }
+                />
+                <span className="ms-2">{tuit.likes}</span>
             </div>
+            <div className="col-2">
+            <FaThumbsDown
+                // className="text-danger"
+                onClick={() =>
+                    dispatch(updateTuitThunk({ ...tuit, dislikes: tuit.dislikes - 1 }))
+                }
+                />
+                <span className="ms-2">{tuit.dislikes}</span>
+            </div>
+
             <div className="col-2">
                 <i className='fa fa-download text-secondary'></i>
             </div>
@@ -71,4 +71,3 @@ const TuitItem = (
     );
 }
 export default TuitItem;
-
