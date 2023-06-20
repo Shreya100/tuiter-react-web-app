@@ -17,7 +17,6 @@ const WhatsHappening = () => {
  const dispatch = useDispatch();
  const tuitClickHandler = () => {
     const newTuit = {
-      _id: "1232",
       topic: "Space",
       username: "SpaceX",
       handle: "@spacex",
